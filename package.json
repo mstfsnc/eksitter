@@ -31,6 +31,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
+    "moment": "^2.25.3",
     "mustache": "^4.0.1",
     "webextension-polyfill": "^0.6.0"
   }

@@ -1,6 +1,8 @@
 import Api from "../../lib/api";
 import Mustache from "mustache";
 import template from "./template.html";
+import moment from "moment";
+import "moment/locale/tr";
 
 export default class Section {
   constructor(element, signal) {
@@ -99,11 +101,27 @@ export default class Section {
           const author = entry.querySelector(".entry-author");
           const favorite = entry.getAttribute("data-favorite-count");
 
+          const [created, updated] = date.innerText.split("~");
+          const createdAt = moment(created, "DD.MM.YYYY HH:mm").format(
+            "D MMM YYYY, HH:mm"
+          );
+          let updatedAt = "";
+          if (updated) {
+            const _updated = updated.trim();
+            if (_updated.length < 6) {
+              updatedAt = _updated;
+            } else {
+              updatedAt = moment(_updated, "DD.MM.YYYY HH:mm").format(
+                "D MMM YYYY, HH:mm"
+              );
+            }
+          }
+
           list.entries.push({
             id: entry.getAttribute("data-id"),
             content: content.innerHTML,
             link: date.getAttribute("href"),
-            date: date.innerText,
+            date: createdAt + (updatedAt ? " ~ " + updatedAt : ""),
             favorite: favorite,
             author: {
               id: entry.getAttribute("data-author-id"),

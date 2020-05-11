@@ -74,9 +74,6 @@ module.exports = env => {
         }
       ]
     },
-    externals: {
-      moment: "moment"
-    },
     mode: env.mode || "production"
   };
 };
