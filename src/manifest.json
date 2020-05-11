@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Eksitter (beta)",
-  "description": "Ekşisözlük twitter arayüzü",
+  "description": "Ekşi sözlük twitter arayüzü",
   "author": "0x15a",
   "icons": {
     "16": "assets/logo-16.png",
