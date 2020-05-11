@@ -52,13 +52,6 @@ export default class Section {
             class: el.classList.contains("nice-on") ? "active" : ""
           });
         });
-        if (modeList.length) {
-          modes.push({
-            name: "sıfırla",
-            link: list.link,
-            class: ""
-          });
-        }
         list.modes = modes;
 
         const pager = filter.querySelector(".pager");
