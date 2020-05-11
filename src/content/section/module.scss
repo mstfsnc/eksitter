@@ -64,15 +64,17 @@
               min-width: 50px;
               min-height: 30px;
               margin-right: 10px;
-              border: 1px solid rgb(129, 193, 75);
-              color: rgb(129, 193, 75);
+              border: 1px solid rgb(83, 162, 69);
+              color: rgb(83, 162, 69);
+              line-height: 30px;
 
               &:hover {
                 background-color: rgba(129, 193, 75, 0.1);
               }
               &.active {
-                background-color: rgb(129, 193, 75);
+                background-color: rgb(83, 162, 69);
                 color: #fff;
+                font-weight: normal;
               }
 
               &.more {
@@ -218,7 +220,7 @@
                 overflow-wrap: break-word;
 
                 a {
-                  color: rgb(129, 193, 75);
+                  color: rgb(83, 162, 69);
                 }
               }
 
