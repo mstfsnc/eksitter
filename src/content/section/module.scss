@@ -1,0 +1,308 @@
+#eksi-app {
+  > main {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-grow: 1;
+    width: 950px;
+
+    > section {
+      display: flex;
+      flex-direction: column;
+      width: 600px;
+
+      .section {
+        display: flex;
+        flex-direction: column;
+        border-left: 1px solid rgb(230, 236, 240);
+        border-right: 1px solid rgb(230, 236, 240);
+
+        header {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          min-height: 50px;
+          padding: 0 15px;
+          border-bottom: 1px solid rgb(230, 236, 240);
+
+          a {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            h1 {
+              color: #333;
+              margin: 0;
+              font-size: 19px;
+              font-weight: 800;
+              overflow-wrap: break-word;
+            }
+          }
+        }
+
+        .filter {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          padding: 15px;
+          border-bottom: 1px solid rgb(230, 236, 240);
+
+          .modes {
+            display: flex;
+            flex-direction: row;
+            a {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              padding: 0 1em;
+              border-radius: 9999px;
+              text-decoration: none;
+              font-weight: bold;
+              font-size: 15px;
+              min-width: 50px;
+              min-height: 30px;
+              margin-right: 10px;
+              border: 1px solid rgb(129, 193, 75);
+              color: rgb(129, 193, 75);
+
+              &:hover {
+                background-color: rgba(129, 193, 75, 0.1);
+              }
+              &.active {
+                background-color: rgb(129, 193, 75);
+                color: #fff;
+              }
+
+              &.more {
+                border: 1px solid rgba(29, 161, 242, 1);
+                color: rgba(29, 161, 242, 1);
+
+                &:hover {
+                  background-color: rgba(29, 161, 242, 0.1);
+                }
+              }
+            }
+          }
+          .pagination {
+            width: 70px;
+            border: 1px solid rgba(29, 161, 242, 1);
+            color: rgba(29, 161, 242, 1);
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 999px;
+            position: relative;
+            &:after {
+              position: absolute;
+              right: 10px;
+              top: 6px;
+              content: "\2193";
+              color: rgba(29, 161, 242, 1);
+              z-index: -1;
+              font-size: 12px;
+            }
+            select {
+              border: none;
+              outline: none;
+              background: transparent;
+              -webkit-appearance: none;
+              -moz-appearance: none;
+              appearance: none;
+              border-radius: 0;
+              margin: 0;
+              color: rgba(29, 161, 242, 1);
+              width: 70px;
+              text-align: center;
+              text-align-last: center;
+              -moz-text-align-last: center;
+              padding-right: 10px;
+              font-weight: bold;
+            }
+          }
+        }
+
+        article {
+          display: flex;
+          flex-direction: column;
+          border-bottom: 1px solid rgb(230, 236, 240);
+
+          .content {
+            display: flex;
+            flex-direction: row;
+            padding: 15px 15px 5px 15px;
+            transition-duration: 0.2s;
+
+            &:hover {
+              background-color: rgb(245, 248, 250);
+            }
+
+            .photo {
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+
+              a {
+                color: rgb(170, 184, 194);
+                font-size: 16px;
+                font-weight: bold;
+                text-decoration: none;
+              }
+
+              .cover {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 50px;
+                height: 50px;
+                border-radius: 100%;
+                background-color: rgb(230, 236, 240);
+              }
+            }
+
+            .entry {
+              display: flex;
+              flex-direction: column;
+              padding-left: 10px;
+              width: 100%;
+
+              .meta {
+                display: flex;
+                flex-direction: row;
+
+                a {
+                  color: rgb(101, 119, 134);
+                  font-size: 15px;
+                  font-weight: 400;
+                  text-decoration: none;
+                }
+
+                .name,
+                .username,
+                .date {
+                  max-width: 150px;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  overflow: hidden;
+                }
+
+                .date {
+                  max-width: 200px;
+                }
+
+                .name {
+                  a {
+                    color: rgb(20, 23, 26);
+                    font-weight: bold;
+
+                    &:hover {
+                      text-decoration: underline;
+                    }
+                  }
+                }
+
+                .name,
+                .username,
+                .sep {
+                  padding-right: 7px;
+                }
+              }
+
+              .text {
+                font-size: 15px;
+                color: rgb(20, 23, 26);
+                overflow-wrap: break-word;
+
+                a {
+                  color: rgb(129, 193, 75);
+                }
+              }
+
+              footer {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                margin-top: 10px;
+                width: 100%;
+                a {
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: space-between;
+                  align-items: center;
+                  text-decoration: none;
+                  transition-duration: 0.2s;
+                  color: rgb(101, 119, 134);
+                  margin-right: 15px;
+                  font-size: 12px;
+
+                  &:nth-child(1) {
+                    margin-left: -10px;
+                  }
+
+                  .icon {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 100%;
+                    transition-duration: 0.2s;
+
+                    svg {
+                      width: 18px;
+                      color: rgb(101, 119, 134);
+                    }
+                  }
+                  .count {
+                    margin-left: 3px;
+                  }
+                  &:nth-child(1) .icon:hover,
+                  &:nth-child(2) .icon:hover {
+                    background-color: rgba(29, 161, 242, 0.1);
+                    svg {
+                      color: rgb(29, 161, 242);
+                    }
+                  }
+
+                  &.voted:nth-child(1) .icon,
+                  &.voted:nth-child(2) .icon {
+                    svg {
+                      color: rgb(29, 161, 242);
+                    }
+                  }
+                  &.voted:nth-child(3) {
+                    .icon {
+                      svg {
+                        color: rgb(224, 36, 94);
+                      }
+                    }
+                    .count {
+                      color: rgb(224, 36, 94);
+                    }
+                  }
+
+                  &:nth-child(3) .icon:hover {
+                    background-color: rgba(224, 36, 94, 0.1);
+                    svg {
+                      color: rgb(224, 36, 94);
+                    }
+
+                    & + .count {
+                      color: rgb(224, 36, 94);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

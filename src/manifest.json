@@ -1,0 +1,45 @@
+{
+  "manifest_version": 2,
+  "name": "Ekşisözlük twitter teması",
+  "description": "Ekşisözlük twitter teması",
+  "author": "Mustafa Sancu",
+  "icons": {
+    "16": "assets/logo-16.png",
+    "32": "assets/logo-32.png",
+    "48": "assets/logo-48.png",
+    "128": "assets/logo-128.png"
+  },
+  "version": "1.0.0",
+  "background": {
+    "scripts": ["./js/background.js"]
+  },
+  "content_scripts": [
+    {
+      "run_at": "document_start",
+      "matches": ["*://eksisozluk.com/*"],
+      "exclude_matches": [
+        "*://*.eksisozluk.com/img*",
+        "*://*.eksisozluk.com/biri*",
+        "*://*.eksisozluk.com/sorunsal*",
+        "*://*.eksisozluk.com/giris*",
+        "*://*.eksisozluk.com/kayit*",
+        "*://*.eksisozluk.com/sifre-sifirla*",
+        "*://*.eksisozluk.com/iletisim*",
+        "*://*.eksisozluk.com/reklam*",
+        "*://*.eksisozluk.com/istatistik*",
+        "*://*.eksisozluk.com/sub-etha*",
+        "*://*.eksisozluk.com/kanallar*",
+        "*://*.eksisozluk.com/mesaj*",
+        "*://*.eksisozluk.com/basliklar/olay*",
+        "*://*.eksisozluk.com/basliklar/sorunsal*",
+        "*://*.eksisozluk.com/takip-engellenmis*",
+        "*://*.eksisozluk.com/cop*",
+        "*://*.eksisozluk.com/terk*",
+        "*://*.eksisozluk.com/ayarlar*"
+      ],
+      "js": ["./js/content-script.js"],
+      "css": ["./css/content-script.css"]
+    }
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}

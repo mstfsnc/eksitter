@@ -1,0 +1,121 @@
+{{#sections}}
+<div class="section">
+  <header>
+    <a href="{{ link }}">
+      <h1>{{ title }}</h1>
+    </a>
+  </header>
+  {{#filter}}
+  <div class="filter">
+    {{#modes.length}}
+    <div class="modes">
+      {{#modes}}
+      <a class="{{ class }}" href="{{ link }}">{{ name }}</a>
+      {{/modes}}
+      {{#more.top}}
+      <a class="more" href="{{ more.top.link }}">{{ more.top.name }}</a>
+      {{/more.top}}
+    </div>
+    {{/modes.length}}
+    {{#pagination.length}}
+    <div class="pagination">
+      <select name="pagination">
+        {{#pagination}}
+        <option value="{{ value }}" {{{ selected }}}>{{ value }}</option>
+        {{/pagination}}
+      </select>
+    </div>
+    {{/pagination.length}}
+  </div>
+  {{/filter}}
+  {{#entries}}
+  <article>
+    <div class="content">
+      <div class="photo">
+        <a href="{{ author.link }}">
+          <div class="cover">{{ author.photo }}</div>
+        </a>
+      </div>
+      <div class="entry">
+        <div class="meta">
+          <div class="name"><a href="{{ author.link }}" title="{{ author.name }}">{{ author.name }}</a></div>
+          <div class="username"><a href="{{ author.link }}" title="{{ author.name }}">@{{ author.name }}</a></div>
+          <div class="sep">·</div>
+          <div class="date"><a href="{{ link }}" title="{{ date }}">{{ date }}</a></div>
+        </div>
+        <div class="text">{{{ content }}}</div>
+        <footer>
+          <a href="#" title="şükela" data-url="/entry/vote" data-id="{{ id }}" data-author="{{ author.id }}"
+            data-interaction="like">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-thumbs-up">
+                <path
+                  d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3">
+                </path>
+              </svg>
+            </div>
+          </a>
+          <a href="#" title="çok kötü" data-url="/entry/vote" data-id="{{ id }}" data-author="{{ author.id }}"
+            data-interaction="dislike">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-thumbs-down">
+                <path
+                  d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17">
+                </path>
+              </svg>
+            </div>
+          </a>
+          <a href="#" title="fav" data-url="/entry/favla" data-id="{{ id }}" data-author="{{ author.id }}"
+            data-interaction="favorite">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-heart">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                </path>
+              </svg>
+            </div>
+            <div class="count">{{ favorite }}</div>
+          </a>
+        </footer>
+      </div>
+    </div>
+  </article>
+  {{/entries}}
+  {{#filter}}
+  <div class="filter">
+    {{#modes.length}}
+    <div class="modes">
+      {{#modes}}
+      <a class="{{ class }}" href="{{ link }}">{{ name }}</a>
+      {{/modes}}
+      {{#more.bottom}}
+      <a class="more" href="{{ more.bottom.link }}">{{ more.bottom.name }}</a>
+      {{/more.bottom}}
+    </div>
+    {{/modes.length}}
+    {{#pagination.length}}
+    <div class="pagination">
+      <select name="pagination">
+        {{#pagination}}
+        <option value="{{ value }}" {{{ selected }}}>{{ value }}</option>
+        {{/pagination}}
+      </select>
+    </div>
+    {{/pagination.length}}
+  </div>
+  {{/filter}}
+  {{^entries}}
+  <article>
+    <div class="content">
+      Böyle bir şey yok
+    </div>
+  </article>
+  {{/entries}}
+</div>
+{{/sections}}

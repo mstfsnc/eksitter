@@ -1,0 +1,75 @@
+#eksi-app {
+  > header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-grow: 1;
+    width: 275px;
+
+    .header {
+      position: fixed;
+      width: 240px;
+      ul {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0 20px;
+        list-style: none;
+
+        li {
+          display: flex;
+          flex-direction: column;
+
+          a {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex-grow: 1;
+            width: 100%;
+            padding: 7px 0;
+            text-decoration: none;
+            color: rgb(20, 23, 26);
+
+            &:first-child {
+              padding-top: 2px;
+            }
+
+            &:hover {
+              .category {
+                color: rgb(129, 193, 75);
+                background-color: rgba(129, 193, 75, 0.1);
+              }
+            }
+
+            .category {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              padding: 10px;
+              max-width: 100%;
+              border-radius: 9999px;
+              transition-duration: 0.2s;
+
+              .icon {
+                display: flex;
+              }
+
+              .name {
+                display: inline;
+                max-width: 100%;
+                overflow-x: hidden;
+                overflow-y: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                font-size: 19px;
+                font-weight: bold;
+                margin: 0 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
