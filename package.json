@@ -1,7 +1,7 @@
 {
-  "name": "browser-extension-bilerplate",
+  "name": "eksitter",
   "version": "1.0.0",
-  "description": "Browser extension biolerplate",
+  "description": "Ekşisözlük twitter arayüzü",
   "main": "index.js",
   "scripts": {
     "build": "./node_modules/.bin/webpack --env.mode=production",

@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "Ekşisözlük twitter teması",
-  "description": "Ekşisözlük twitter teması",
+  "name": "Eksitter",
+  "description": "Ekşisözlük twitter arayüzü",
   "author": "Mustafa Sancu",
   "icons": {
     "16": "assets/logo-16.png",
