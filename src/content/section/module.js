@@ -9,7 +9,7 @@ export default class Section {
     this.$el = element;
     this.api = new Api();
 
-    signal.add("render:section", model => {
+    signal.add("render:section", (model) => {
       this.model = model;
       this.render();
     });
@@ -39,19 +39,19 @@ export default class Section {
         pagination: [],
         more: {
           top: false,
-          bottom: false
+          bottom: false,
         },
-        filter: false
+        filter: false,
       };
 
       if (filter) {
         const modeList = filter.querySelectorAll(".nice-mode-toggler a");
         const modes = [];
-        modeList.forEach(el => {
+        modeList.forEach((el) => {
           modes.push({
             name: el.innerText,
             link: el.getAttribute("href"),
-            class: el.classList.contains("nice-on") ? "active" : ""
+            class: el.classList.contains("nice-on") ? "active" : "",
           });
         });
         list.modes = modes;
@@ -65,7 +65,7 @@ export default class Section {
           for (var i = 1; i <= count; i++) {
             pagination.push({
               value: i,
-              selected: i === current ? 'selected="selected"' : ""
+              selected: i === current ? 'selected="selected"' : "",
             });
           }
         }
@@ -81,13 +81,13 @@ export default class Section {
         if (top) {
           list.more.top = {
             name: top.innerText,
-            link: top.getAttribute("href")
+            link: top.getAttribute("href"),
           };
         }
         if (bottom) {
           list.more.bottom = {
             name: bottom.innerText,
-            link: bottom.getAttribute("href")
+            link: bottom.getAttribute("href"),
           };
         }
         list.filter = true;
@@ -95,7 +95,7 @@ export default class Section {
 
       if (entryList[index]) {
         const entries = entryList[index].querySelectorAll("li");
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           const content = entry.querySelector(".content");
           const date = entry.querySelector(".entry-date");
           const author = entry.querySelector(".entry-author");
@@ -127,8 +127,8 @@ export default class Section {
               id: entry.getAttribute("data-author-id"),
               name: author.innerText,
               photo: author.innerText.substring(0, 1),
-              link: author.getAttribute("href")
-            }
+              link: author.getAttribute("href"),
+            },
           });
         });
       }
@@ -141,8 +141,8 @@ export default class Section {
   listen() {
     const paginations = this.$el.querySelectorAll(".pagination select");
     if (paginations.length) {
-      paginations.forEach(pagination => {
-        pagination.addEventListener("change", event => {
+      paginations.forEach((pagination) => {
+        pagination.addEventListener("change", (event) => {
           const url = new URLSearchParams(window.location.search);
           url.set("p", event.target.value);
           url.delete("focusto");
@@ -153,8 +153,8 @@ export default class Section {
 
     const interactions = this.$el.querySelectorAll("[data-interaction]");
     if (interactions.length) {
-      interactions.forEach(el => {
-        el.addEventListener("click", event => {
+      interactions.forEach((el) => {
+        el.addEventListener("click", (event) => {
           event.preventDefault();
           const type = el.getAttribute("data-interaction");
           const id = el.getAttribute("data-id");
@@ -165,7 +165,7 @@ export default class Section {
             case "like":
               this.api
                 .interaction(url, { id: id, owner: authorId, rate: 1 })
-                .then(response => {
+                .then((response) => {
                   if (response) {
                     if (url === "/entry/vote") {
                       el.classList.add("voted");
@@ -182,9 +182,9 @@ export default class Section {
                 .interaction(url, {
                   id: id,
                   owner: authorId,
-                  rate: -1
+                  rate: -1,
                 })
-                .then(response => {
+                .then((response) => {
                   if (response) {
                     if (url === "/entry/vote") {
                       el.classList.add("voted");
@@ -199,9 +199,9 @@ export default class Section {
             case "favorite":
               this.api
                 .interaction(url, {
-                  entryId: id
+                  entryId: id,
                 })
-                .then(response => {
+                .then((response) => {
                   if (response) {
                     if (url === "/entry/favla") {
                       el.classList.add("voted");
@@ -224,7 +224,7 @@ export default class Section {
     this.$el.insertAdjacentHTML(
       "beforeend",
       Mustache.render(template, {
-        sections: this.parse()
+        sections: this.parse(),
       })
     );
     this.listen();

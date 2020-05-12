@@ -8,10 +8,10 @@ export default class Api {
     return axios
       .get(`${url}?_=${Date.now()}`, {
         headers: {
-          "x-requested-with": "XMLHttpRequest"
-        }
+          "x-requested-with": "XMLHttpRequest",
+        },
       })
-      .then(response => {
+      .then((response) => {
         return this.parser.parseFromString(response.data, "text/html");
       });
   }
@@ -24,10 +24,10 @@ export default class Api {
     return axios
       .post(url, params, {
         headers: {
-          "x-requested-with": "XMLHttpRequest"
-        }
+          "x-requested-with": "XMLHttpRequest",
+        },
       })
-      .then(response => {
+      .then((response) => {
         return response.data;
       });
   }
@@ -36,13 +36,13 @@ export default class Api {
       .get("autocomplete/query", {
         params: {
           q: query,
-          _: Date.now()
+          _: Date.now(),
         },
         headers: {
-          "x-requested-with": "XMLHttpRequest"
-        }
+          "x-requested-with": "XMLHttpRequest",
+        },
       })
-      .then(response => {
+      .then((response) => {
         return response.data;
       });
   }

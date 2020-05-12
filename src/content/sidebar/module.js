@@ -8,7 +8,7 @@ export default class Sidebar {
     this.$el = element;
     this.api = new Api();
 
-    signal.add("render:sidebar", model => {
+    signal.add("render:sidebar", (model) => {
       this.model = model;
       this.render();
     });
@@ -19,7 +19,7 @@ export default class Sidebar {
     const title = this.model.querySelector("h2").innerText;
 
     const topics = [];
-    topicList.forEach(topic => {
+    topicList.forEach((topic) => {
       let title = topic.innerText.trim();
       let count = topic.querySelector("small");
       let link = topic.getAttribute("href");
@@ -32,7 +32,7 @@ export default class Sidebar {
         topics.push({
           link,
           title,
-          count
+          count,
         });
       }
     });
@@ -44,16 +44,16 @@ export default class Sidebar {
     const input = this.$el.querySelector(".search input");
     let showResult = false;
     if (input) {
-      input.addEventListener("keyup", event => {
+      input.addEventListener("keyup", (event) => {
         const value = event.target.value;
         if (value) {
-          this.api.search(value).then(response => {
+          this.api.search(value).then((response) => {
             $result.innerHTML = "";
             $result.insertAdjacentHTML(
               "beforeend",
               Mustache.render(search, {
-                titles: response.Titles.map(title => ({ title })),
-                users: response.Nicks.map(user => ({ user }))
+                titles: response.Titles.map((title) => ({ title })),
+                users: response.Nicks.map((user) => ({ user })),
               })
             );
             if (showResult === false) {
@@ -69,7 +69,7 @@ export default class Sidebar {
         }
       });
 
-      document.body.addEventListener("click", event => {
+      document.body.addEventListener("click", (event) => {
         if (showResult === true) {
           showResult = false;
           $result.classList.remove("show");

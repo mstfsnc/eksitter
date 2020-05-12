@@ -12,13 +12,13 @@ export default class Header {
   }
   listen() {
     const links = this.$el.querySelectorAll("[data-action]");
-    links.forEach(el => {
-      el.addEventListener("click", event => {
+    links.forEach((el) => {
+      el.addEventListener("click", (event) => {
         event.preventDefault();
         const element = event.target.closest("a");
         const action = element.getAttribute("data-action");
 
-        this.api.action(action).then(model => {
+        this.api.action(action).then((model) => {
           this.signal.trigger("render:sidebar", model);
         });
       });
