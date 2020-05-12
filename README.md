@@ -5,6 +5,8 @@ Giriş yapan kullanıcılar için uygun değil, giriş yaptıktan sonra çalış
 <br /><br />
 ![Screenshot](https://raw.githubusercontent.com/mstfsnc/eksitter/master/screenshot.png)
 <br /><br />
+![Screenshot1](https://raw.githubusercontent.com/mstfsnc/eksitter/master/screenshot1.png)
+<br /><br />
 ### Henüz yapılmayanlar
  - [ ] Entry yazma
  - [ ] Yazar profil
