@@ -78,6 +78,7 @@ export default class Sidebar {
     }
   }
   render() {
+    this.$el.innerHTML = "";
     this.$el.insertAdjacentHTML(
       "beforeend",
       Mustache.render(template, this.parse())
