@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // remove css files
   document.querySelectorAll("link").forEach((link) => {
     const href = link.getAttribute("href");
-    if (href.startsWith("//ekstat") || href.startsWith("/content/css")) {
+    if (link && (href.startsWith("//ekstat") || href.startsWith("/content/css"))) {
       link.remove();
     }
   });
