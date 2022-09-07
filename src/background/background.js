@@ -8,3 +8,8 @@ chrome.browserAction.onClicked.addListener(function () {
     chrome.storage.sync.set({ status: !result.status });
   });
 });
+chrome.runtime.onInstalled.addListener(function (details) {
+  if (details.reason == "install") {
+    chrome.storage.sync.set({ status: true });
+  }
+});
