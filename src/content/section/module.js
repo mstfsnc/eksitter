@@ -97,6 +97,9 @@ export default class Section {
         const entries = entryList[index].querySelectorAll("li");
         entries.forEach((entry) => {
           const content = entry.querySelector(".content");
+          if (!content) {
+            return;
+          }
           const date = entry.querySelector(".entry-date");
           const author = entry.querySelector(".entry-author");
           const favorite = entry.getAttribute("data-favorite-count");

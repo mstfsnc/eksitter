@@ -20,14 +20,13 @@ export default class Sidebar {
 
     const topics = [];
     topicList.forEach((topic) => {
-      let title = topic.innerText.trim();
+      let title = topic.innerHTML;
       let count = topic.querySelector("small");
       let link = topic.getAttribute("href");
       if (count) {
-        count = count.innerText;
-        title = title.replace(count, "");
+        title = title.replace(count.outerHTML, "").trim();
+        count = count.innerText.trim();
       }
-
       if (title) {
         topics.push({
           link,
