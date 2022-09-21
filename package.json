@@ -1,6 +1,6 @@
 {
   "name": "eksitter",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Ekşisözlük twitter arayüzü",
   "main": "index.js",
   "scripts": {
