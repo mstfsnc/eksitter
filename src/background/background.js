@@ -1,13 +1,22 @@
-chrome.browserAction.onClicked.addListener(function () {
+chrome.action.onClicked.addListener(() => {
   chrome.storage.sync.get(["status"], function (result) {
     if (result.status) {
-      chrome.browserAction.setIcon({ path: "/assets/logo-48-gray.png" });
+      chrome.action.setIcon({
+        path: {
+          48: "logo-48-gray.png",
+        },
+      });
     } else {
-      chrome.browserAction.setIcon({ path: "/assets/logo-48.png" });
+      chrome.action.setIcon({
+        path: {
+          48: "src/assets/logo-48.png",
+        }
+      });
     }
     chrome.storage.sync.set({ status: !result.status });
   });
 });
+
 chrome.runtime.onInstalled.addListener(function (details) {
   if (details.reason == "install") {
     chrome.storage.sync.set({ status: true });

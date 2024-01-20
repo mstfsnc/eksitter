@@ -1,7 +1,7 @@
 import Api from "../../lib/api";
 import Mustache from "mustache";
-import template from "./template.html";
-import search from "./search.html";
+import template from "./template.html?raw";
+import search from "./search.html?raw";
 
 export default class Sidebar {
   constructor(element, signal) {
