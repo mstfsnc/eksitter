@@ -45,11 +45,11 @@ export default class Section {
       };
 
       if (filter) {
-        const modeList = filter.querySelectorAll(".nice-mode-toggler a");
+        const modeList = filter.querySelectorAll("#in-topic-nice-options a");
         const modes = [];
         modeList.forEach((el) => {
           modes.push({
-            name: el.innerText,
+            name: el.innerText.replace("son ", ""),
             link: el.getAttribute("href"),
             class: el.classList.contains("nice-on") ? "active" : "",
           });
@@ -80,13 +80,13 @@ export default class Section {
 
         if (top) {
           list.more.top = {
-            name: top.innerText,
+            name:  "diğer",
             link: top.getAttribute("href"),
           };
         }
         if (bottom) {
           list.more.bottom = {
-            name: bottom.innerText,
+            name:  "diğer",
             link: bottom.getAttribute("href"),
           };
         }
@@ -102,6 +102,7 @@ export default class Section {
           }
           const date = entry.querySelector(".entry-date");
           const author = entry.querySelector(".entry-author");
+          const avatar = entry.querySelector(".avatar-container img");
           const favorite = entry.getAttribute("data-favorite-count");
 
           const [created, updated] = date.innerText.split("~");
@@ -129,7 +130,8 @@ export default class Section {
             author: {
               id: entry.getAttribute("data-author-id"),
               name: author.innerText,
-              photo: author.innerText.substring(0, 1),
+              cover: author.innerText.substring(0, 1),
+              avatar: avatar.getAttribute("src"),
               link: author.getAttribute("href"),
             },
           });

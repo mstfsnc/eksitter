@@ -132,6 +132,18 @@
           flex-direction: column;
           border-bottom: 1px solid rgb(230, 236, 240);
 
+          &:hover {
+            .content {
+              .photo {
+                .avatar {
+                  img {
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+          }
+
           .content {
             display: flex;
             flex-direction: row;
@@ -159,10 +171,23 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                width: 50px;
-                height: 50px;
+                width: 35px;
+                height: 35px;
                 border-radius: 100%;
                 background-color: rgb(230, 236, 240);
+              }
+
+              .avatar {
+                img {
+                  width: 35px;
+                  height: 35px;
+                  border-radius: 100%;
+                  opacity: .4;
+                  transition: opacity .5s ease-out;
+                  -moz-transition: opacity .5s ease-out;
+                  -webkit-transition: opacity .5s ease-out;
+                  -o-transition: opacity .5s ease-out;
+                }
               }
             }
 

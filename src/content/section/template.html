@@ -33,7 +33,14 @@
     <div class="content">
       <div class="photo">
         <a href="{{ author.link }}">
-          <div class="cover">{{ author.photo }}</div>
+          {{#author.avatar}}
+            <div class="avatar">
+              <img src="{{ author.avatar }}" />
+            </div>
+          {{/author.avatar}}
+          {{^author.avatar}}
+            <div class="cover">{{ author.photo }}</div>
+          {{/author.avatar}}
         </a>
       </div>
       <div class="entry">

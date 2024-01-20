@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // header
       const $headerEl = document.createElement("header");
-      const header = new Header($headerEl, signal);
+      new Header($headerEl, signal);
       signal.trigger("render:header");
       app.appendChild($headerEl);
 
@@ -22,13 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // section
       const $sectionEl = document.createElement("section");
-      const section = new Section($sectionEl, signal);
+      new Section($sectionEl, signal);
       signal.trigger("render:section", document);
       main.appendChild($sectionEl);
 
       // aside
       const $asideEl = document.createElement("aside");
-      const sidebar = new Sidebar($asideEl, signal);
+      new Sidebar($asideEl, signal);
       signal.trigger("render:sidebar", document);
       main.appendChild($asideEl);
 
@@ -40,8 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const href = link.getAttribute("href");
         if (
           href &&
-          (href.startsWith("//ekstat") || href.startsWith("/content/css"))
-        ) {
+          (href.startsWith("//ekstat") || href.toLocaleLowerCase().startsWith("/content"))
+          ) {
           link.remove();
         }
       });
