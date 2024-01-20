@@ -1,0 +1,83 @@
+{
+  "manifest_version": 3,
+  "name": "Ekşitter (beta)",
+  "description": "Ekşi sözlük twitter arayüzü",
+  "author": "mstfsnc@gmail.com",
+  "icons": {
+    "16": "src/assets/logo-16.png",
+    "32": "src/assets/logo-32.png",
+    "48": "src/assets/logo-48.png",
+    "128": "src/assets/logo-128.png"
+  },
+  "version": "2.0.0",
+  "background": {
+    "service_worker": "src/background/background.js"
+  },
+  "action": {},
+  "content_scripts": [
+    {
+      "run_at": "document_end",
+      "matches": [
+        "*://eksisozluk111.com/*"
+      ],
+      "exclude_matches": [
+        "*://*.eksisozluk111.com/img*",
+        "*://*.eksisozluk111.com/biri*",
+        "*://*.eksisozluk111.com/sorunsal*",
+        "*://*.eksisozluk111.com/giris*",
+        "*://*.eksisozluk111.com/kayit*",
+        "*://*.eksisozluk111.com/sifre-sifirla*",
+        "*://*.eksisozluk111.com/iletisim*",
+        "*://*.eksisozluk111.com/reklam*",
+        "*://*.eksisozluk111.com/istatistik*",
+        "*://*.eksisozluk111.com/sub-etha*",
+        "*://*.eksisozluk111.com/kanallar*",
+        "*://*.eksisozluk111.com/mesaj*",
+        "*://*.eksisozluk111.com/basliklar/olay*",
+        "*://*.eksisozluk111.com/basliklar/sorunsal*",
+        "*://*.eksisozluk111.com/takip-engellenmis*",
+        "*://*.eksisozluk111.com/cop*",
+        "*://*.eksisozluk111.com/terk*",
+        "*://*.eksisozluk111.com/ayarlar*"
+      ],
+      "js": [
+        "src/content/content.js"
+      ]
+    },
+    {
+      "run_at": "document_start",
+      "matches": [
+        "*://eksisozluk111.com/*"
+      ],
+      "exclude_matches": [
+        "*://*.eksisozluk111.com/img*",
+        "*://*.eksisozluk111.com/biri*",
+        "*://*.eksisozluk111.com/sorunsal*",
+        "*://*.eksisozluk111.com/giris*",
+        "*://*.eksisozluk111.com/kayit*",
+        "*://*.eksisozluk111.com/sifre-sifirla*",
+        "*://*.eksisozluk111.com/iletisim*",
+        "*://*.eksisozluk111.com/reklam*",
+        "*://*.eksisozluk111.com/istatistik*",
+        "*://*.eksisozluk111.com/sub-etha*",
+        "*://*.eksisozluk111.com/kanallar*",
+        "*://*.eksisozluk111.com/mesaj*",
+        "*://*.eksisozluk111.com/basliklar/olay*",
+        "*://*.eksisozluk111.com/basliklar/sorunsal*",
+        "*://*.eksisozluk111.com/takip-engellenmis*",
+        "*://*.eksisozluk111.com/cop*",
+        "*://*.eksisozluk111.com/terk*",
+        "*://*.eksisozluk111.com/ayarlar*"
+      ],
+      "css": [
+        "content.css"
+      ]
+    }
+  ],
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.eksisozluk111.com/*"
+  ]
+}

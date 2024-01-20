@@ -1,6 +1,6 @@
 import Api from "../../lib/api";
 import Mustache from "mustache";
-import template from "./template.html";
+import template from "./template.html?raw";
 import moment from "moment";
 import "moment/locale/tr";
 

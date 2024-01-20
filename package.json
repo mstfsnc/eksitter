@@ -1,41 +1,24 @@
 {
   "name": "eksitter",
-  "version": "1.1.2",
   "description": "Ekşisözlük twitter arayüzü",
-  "main": "index.js",
-  "scripts": {
-    "build": "./node_modules/.bin/webpack --env.mode=production",
-    "watch": "./node_modules/.bin/webpack --watch --env.mode=development",
-    "zip": "zip -r extension.zip dist/",
-    "prettier": "prettier \"src/**/*.{js,scss,json}\"",
-    "prettier:write": "npm run prettier -- --write",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "version": "2.0.0",
   "author": "mstfsnc@gmail.com",
   "license": "ISC",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
   "devDependencies": {
-    "@babel/core": "^7.9.6",
-    "autoprefixer": "^9.7.3",
-    "babel-loader": "^8.0.6",
-    "clean-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^5.0.5",
-    "css-loader": "^3.5.3",
-    "html-loader": "^0.5.5",
-    "mini-css-extract-plugin": "^0.8.0",
-    "postcss-loader": "^3.0.0",
-    "prettier": "^2.0.5",
-    "sass-loader": "^8.0.0",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.11.0",
-    "webpack-extension-reloader": "^1.1.4"
+    "@crxjs/vite-plugin": "^2.0.0-beta.23",
+    "sass": "^1.70.0",
+    "vite": "^5.0.8"
   },
   "dependencies": {
-    "axios": "^0.19.2",
-    "bootstrap": "^4.4.1",
-    "moment": "^2.25.3",
-    "mustache": "^4.0.1",
-    "sass": "^1.62.1",
-    "webextension-polyfill": "^0.6.0"
+    "axios": "^1.6.5",
+    "bootstrap": "^5.3.2",
+    "moment": "^2.30.1",
+    "mustache": "^4.2.0"
   }
 }

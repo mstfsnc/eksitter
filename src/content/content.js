@@ -1,57 +1,58 @@
 import Signal from "./../lib/signal";
-import Header from "./header/module.js";
-import Section from "./section/module.js";
-import Sidebar from "./sidebar/module.js";
+import Header from "./header/module";
+import Section from "./section/module";
+import Sidebar from "./sidebar/module";
+import './content.scss';
 
-document.addEventListener("DOMContentLoaded", () => {
-  const signal = new Signal();
-  chrome.storage.sync.get(["status"], function (result) {
-    if (result.status) {
-      // app
-      const app = document.createElement("div");
-      app.setAttribute("id", "eksi-app");
+chrome.storage.sync.get(["status"], function (result) {
+  if (result.status) {
 
-      // header
-      const $headerEl = document.createElement("header");
-      new Header($headerEl, signal);
-      signal.trigger("render:header");
-      app.appendChild($headerEl);
+    const signal = new Signal();
+    // app
+    const app = document.createElement("div");
+    app.setAttribute("id", "eksi-app");
 
-      // main wrapper
-      const main = document.createElement("main");
+    // header
+    const $headerEl = document.createElement("header");
+    new Header($headerEl, signal);
+    signal.trigger("render:header");
+    app.appendChild($headerEl);
 
-      // section
-      const $sectionEl = document.createElement("section");
-      new Section($sectionEl, signal);
-      signal.trigger("render:section", document);
-      main.appendChild($sectionEl);
+    // main wrapper
+    const main = document.createElement("main");
 
-      // aside
-      const $asideEl = document.createElement("aside");
-      new Sidebar($asideEl, signal);
-      signal.trigger("render:sidebar", document);
-      main.appendChild($asideEl);
+    // section
+    const $sectionEl = document.createElement("section");
+    new Section($sectionEl, signal);
+    signal.trigger("render:section", document);
+    main.appendChild($sectionEl);
 
-      // main to app
-      app.appendChild(main);
+    // aside
+    const $asideEl = document.createElement("aside");
+    new Sidebar($asideEl, signal);
+    signal.trigger("render:sidebar", document);
+    main.appendChild($asideEl);
 
-      // remove css files
-      document.querySelectorAll("link").forEach((link) => {
-        const href = link.getAttribute("href");
-        if (
-          href &&
-          (href.startsWith("//ekstat") || href.toLocaleLowerCase().startsWith("/content"))
-          ) {
-          link.remove();
-        }
-      });
+    // main to app
+    app.appendChild(main);
 
-      // body
-      document.body.innerHTML = "";
-      document.body.classList.add("extension-ready");
-      document.body.appendChild(app);
-    } else {
-      document.body.classList.add("extension-ready");
-    }
-  });
+    // remove css files
+    document.querySelectorAll("link").forEach((link) => {
+      const href = link.getAttribute("href");
+      if (
+        href &&
+        (href.startsWith("//ekstat") || href.toLocaleLowerCase().startsWith("/content"))
+      ) {
+        link.remove();
+      }
+    });
+
+    // body
+    document.body.innerHTML = "";
+    document.body.classList.add("extension-ready");
+    document.body.appendChild(app);
+
+  } else {
+    document.body.classList.add("extension-ready");
+  }
 });

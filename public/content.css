@@ -1,0 +1,3 @@
+body:not(.extension-ready) {
+  display: none;
+}
