@@ -68,7 +68,7 @@ export default class Sidebar {
         }
       });
 
-      document.body.addEventListener("click", (event) => {
+      document.body.addEventListener("click", () => {
         if (showResult === true) {
           showResult = false;
           $result.classList.remove("show");

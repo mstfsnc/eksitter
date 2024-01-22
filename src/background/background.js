@@ -10,7 +10,7 @@ chrome.action.onClicked.addListener(() => {
       chrome.action.setIcon({
         path: {
           48: "src/assets/logo-48.png",
-        }
+        },
       });
     }
     chrome.storage.sync.set({ status: !result.status });

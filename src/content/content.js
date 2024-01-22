@@ -2,11 +2,10 @@ import Signal from "./../lib/signal";
 import Header from "./header/module";
 import Section from "./section/module";
 import Sidebar from "./sidebar/module";
-import './content.scss';
+import "./content.scss";
 
 chrome.storage.sync.get(["status"], function (result) {
   if (result.status) {
-
     const signal = new Signal();
     // app
     const app = document.createElement("div");
@@ -46,12 +45,10 @@ chrome.storage.sync.get(["status"], function (result) {
       script.remove();
     });
 
-
     // body
     document.body.innerHTML = "";
     document.body.classList.add("extension-ready");
     document.body.appendChild(app);
-
   } else {
     document.body.classList.add("extension-ready");
   }
