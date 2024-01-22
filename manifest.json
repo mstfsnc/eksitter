@@ -9,7 +9,7 @@
     "48": "src/assets/logo-48.png",
     "128": "src/assets/logo-128.png"
   },
-  "version": "2.0.1",
+  "version": "2.0.2",
   "background": {
     "service_worker": "src/background/background.js"
   },
