@@ -9,7 +9,7 @@
     "48": "src/assets/logo-48.png",
     "128": "src/assets/logo-128.png"
   },
-  "version": "2.0.0",
+  "version": "2.0.1",
   "background": {
     "service_worker": "src/background/background.js"
   },
@@ -18,27 +18,27 @@
     {
       "run_at": "document_end",
       "matches": [
-        "*://eksisozluk111.com/*"
+        "*://eksisozluk.com/*"
       ],
       "exclude_matches": [
-        "*://*.eksisozluk111.com/img*",
-        "*://*.eksisozluk111.com/biri*",
-        "*://*.eksisozluk111.com/sorunsal*",
-        "*://*.eksisozluk111.com/giris*",
-        "*://*.eksisozluk111.com/kayit*",
-        "*://*.eksisozluk111.com/sifre-sifirla*",
-        "*://*.eksisozluk111.com/iletisim*",
-        "*://*.eksisozluk111.com/reklam*",
-        "*://*.eksisozluk111.com/istatistik*",
-        "*://*.eksisozluk111.com/sub-etha*",
-        "*://*.eksisozluk111.com/kanallar*",
-        "*://*.eksisozluk111.com/mesaj*",
-        "*://*.eksisozluk111.com/basliklar/olay*",
-        "*://*.eksisozluk111.com/basliklar/sorunsal*",
-        "*://*.eksisozluk111.com/takip-engellenmis*",
-        "*://*.eksisozluk111.com/cop*",
-        "*://*.eksisozluk111.com/terk*",
-        "*://*.eksisozluk111.com/ayarlar*"
+        "*://*.eksisozluk.com/img*",
+        "*://*.eksisozluk.com/biri*",
+        "*://*.eksisozluk.com/sorunsal*",
+        "*://*.eksisozluk.com/giris*",
+        "*://*.eksisozluk.com/kayit*",
+        "*://*.eksisozluk.com/sifre-sifirla*",
+        "*://*.eksisozluk.com/iletisim*",
+        "*://*.eksisozluk.com/reklam*",
+        "*://*.eksisozluk.com/istatistik*",
+        "*://*.eksisozluk.com/sub-etha*",
+        "*://*.eksisozluk.com/kanallar*",
+        "*://*.eksisozluk.com/mesaj*",
+        "*://*.eksisozluk.com/basliklar/olay*",
+        "*://*.eksisozluk.com/basliklar/sorunsal*",
+        "*://*.eksisozluk.com/takip-engellenmis*",
+        "*://*.eksisozluk.com/cop*",
+        "*://*.eksisozluk.com/terk*",
+        "*://*.eksisozluk.com/ayarlar*"
       ],
       "js": [
         "src/content/content.js"
@@ -47,27 +47,27 @@
     {
       "run_at": "document_start",
       "matches": [
-        "*://eksisozluk111.com/*"
+        "*://eksisozluk.com/*"
       ],
       "exclude_matches": [
-        "*://*.eksisozluk111.com/img*",
-        "*://*.eksisozluk111.com/biri*",
-        "*://*.eksisozluk111.com/sorunsal*",
-        "*://*.eksisozluk111.com/giris*",
-        "*://*.eksisozluk111.com/kayit*",
-        "*://*.eksisozluk111.com/sifre-sifirla*",
-        "*://*.eksisozluk111.com/iletisim*",
-        "*://*.eksisozluk111.com/reklam*",
-        "*://*.eksisozluk111.com/istatistik*",
-        "*://*.eksisozluk111.com/sub-etha*",
-        "*://*.eksisozluk111.com/kanallar*",
-        "*://*.eksisozluk111.com/mesaj*",
-        "*://*.eksisozluk111.com/basliklar/olay*",
-        "*://*.eksisozluk111.com/basliklar/sorunsal*",
-        "*://*.eksisozluk111.com/takip-engellenmis*",
-        "*://*.eksisozluk111.com/cop*",
-        "*://*.eksisozluk111.com/terk*",
-        "*://*.eksisozluk111.com/ayarlar*"
+        "*://*.eksisozluk.com/img*",
+        "*://*.eksisozluk.com/biri*",
+        "*://*.eksisozluk.com/sorunsal*",
+        "*://*.eksisozluk.com/giris*",
+        "*://*.eksisozluk.com/kayit*",
+        "*://*.eksisozluk.com/sifre-sifirla*",
+        "*://*.eksisozluk.com/iletisim*",
+        "*://*.eksisozluk.com/reklam*",
+        "*://*.eksisozluk.com/istatistik*",
+        "*://*.eksisozluk.com/sub-etha*",
+        "*://*.eksisozluk.com/kanallar*",
+        "*://*.eksisozluk.com/mesaj*",
+        "*://*.eksisozluk.com/basliklar/olay*",
+        "*://*.eksisozluk.com/basliklar/sorunsal*",
+        "*://*.eksisozluk.com/takip-engellenmis*",
+        "*://*.eksisozluk.com/cop*",
+        "*://*.eksisozluk.com/terk*",
+        "*://*.eksisozluk.com/ayarlar*"
       ],
       "css": [
         "content.css"
@@ -78,6 +78,6 @@
     "storage"
   ],
   "host_permissions": [
-    "*://*.eksisozluk111.com/*"
+    "*://*.eksisozluk.com/*"
   ]
 }

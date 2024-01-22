@@ -38,14 +38,14 @@ chrome.storage.sync.get(["status"], function (result) {
 
     // remove css files
     document.querySelectorAll("link").forEach((link) => {
-      const href = link.getAttribute("href");
-      if (
-        href &&
-        (href.startsWith("//ekstat") || href.toLocaleLowerCase().startsWith("/content"))
-      ) {
-        link.remove();
-      }
+      link.remove();
     });
+
+    // remove js files
+    document.querySelectorAll("script").forEach((script) => {
+      script.remove();
+    });
+
 
     // body
     document.body.innerHTML = "";
