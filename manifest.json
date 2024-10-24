@@ -9,7 +9,7 @@
     "48": "src/assets/logo-48.png",
     "128": "src/assets/logo-128.png"
   },
-  "version": "2.0.2",
+  "version": "2.0.3",
   "background": {
     "service_worker": "src/background/background.js"
   },
@@ -17,7 +17,9 @@
   "content_scripts": [
     {
       "run_at": "document_end",
-      "matches": ["*://eksisozluk.com/*"],
+      "matches": [
+        "*://eksisozluk.com/*"
+      ],
       "exclude_matches": [
         "*://*.eksisozluk.com/img*",
         "*://*.eksisozluk.com/biri*",
@@ -38,11 +40,15 @@
         "*://*.eksisozluk.com/terk*",
         "*://*.eksisozluk.com/ayarlar*"
       ],
-      "js": ["src/content/content.js"]
+      "js": [
+        "src/content/content.js"
+      ]
     },
     {
       "run_at": "document_start",
-      "matches": ["*://eksisozluk.com/*"],
+      "matches": [
+        "*://eksisozluk.com/*"
+      ],
       "exclude_matches": [
         "*://*.eksisozluk.com/img*",
         "*://*.eksisozluk.com/biri*",
@@ -63,9 +69,15 @@
         "*://*.eksisozluk.com/terk*",
         "*://*.eksisozluk.com/ayarlar*"
       ],
-      "css": ["content.css"]
+      "css": [
+        "content.css"
+      ]
     }
   ],
-  "permissions": ["storage"],
-  "host_permissions": ["*://*.eksisozluk.com/*"]
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.eksisozluk.com/*"
+  ]
 }
